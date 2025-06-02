@@ -1,0 +1,52 @@
+plugins {
+    id 'com.android.application'
+    // Add Kotlin plugin if using Kotlin
+    // id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.example.backpackstore'
+    compileSdk 33 // Example SDK version
+
+    defaultConfig {
+        applicationId "com.example.backpackstore"
+        minSdk 21 // Example min SDK
+        targetSdk 33 // Example target SDK
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    // If using Kotlin:
+    // kotlinOptions {
+    //     jvmTarget = '1.8'
+    // }
+    buildFeatures {
+        viewBinding true // Optional: if you want to use view binding
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.9.0' // Example, if using Kotlin
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.10.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // GVR SDK for Panorama view
+    implementation 'com.google.vr:sdk-widgets:1.180.0'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}
